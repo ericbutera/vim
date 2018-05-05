@@ -5,25 +5,28 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" colors 
+" colors light
+Plugin 'romainl/flattened' 
+" colors dark
 Plugin 'romainl/Apprentice'
 Plugin 'baskerville/bubblegum'
-Plugin 'romainl/flattened'
+
+" bars n stuff
 Plugin 'itchyny/lightline.vim'
 " Plugin 'vim-airline/vim-airline'
 " Plugin 'vim-airline/vim-airline-themes'
 
-" my plugins
+" various plugins
+Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'sjl/gundo.vim'
 Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'mileszs/ack.vim',     { 'on': 'Ack'            }
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-
+Plugin 'farmergreg/vim-lastplace'
 
 " code
 Plugin 'joonty/vdebug'
@@ -38,6 +41,22 @@ Plugin 'ap/vim-css-color'
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
+
+" use <Leader>b to change buffers
+" https://vi.stackexchange.com/a/2187
+nnoremap <Leader>b :ls<CR>:b<Space>
+
+set nowrap
+set nu
+set expandtab
+" https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces/1878984
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0 noexpandtab
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+
+autocmd FileType html,htmldjango set ai sw=2 ts=2 sta et fo=croql
 
 let g:gutentags_cache_dir = '~/.vim/gutentags'
 
@@ -59,11 +78,28 @@ map <leader>B :BuffergatorToggle<CR>
 
 autocmd FileType js,php,py,rb,json,html,yml,phtml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
-let g:airline_powerline_fonts = 1
-set t_Co=256
+if executable('ag') 
+    let g:ackprg = 'ag --vimgrep'
+endif
 
-colorscheme bubblegum-256-dark
-set background=dark
+if !has('gui_running') 
+    set t_Co=256
+endif
+
+" status
+set laststatus=2
+" export TERM=xterm-256color
+
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme='solarized'
+let g:lightline = { 
+            \ 'colorscheme': 'solarized',
+            \ }
+
+" colorscheme bubblegum-256-dark
+" set background=dark
+
+colorscheme flattened_light
+set background=light
 syntax enable
-let g:airline_theme='bubblegum'
 
