@@ -61,6 +61,12 @@ autocmd FileType html,htmldjango set ai sw=2 ts=2 sta et fo=croql
 
 let g:gutentags_cache_dir = '~/.vim/gutentags'
 
+" put swap, backup and undo files in a special location
+" https://stackoverflow.com/a/15317146/261272
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
 " start configuration
 set pastetoggle=<Ins>
 
