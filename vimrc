@@ -67,6 +67,8 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
+set noswapfile
+
 " start configuration
 set pastetoggle=<Ins>
 
@@ -84,6 +86,10 @@ map <leader>b :BuffergatorToggle<CR>
 map <leader>B :BuffergatorToggle<CR>
 
 autocmd FileType js,php,py,rb,json,html,yml,phtml autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" pep8 formatting using \y
+" https://github.com/mindriot101/vim-yapf#why-you-may-not-need-this-plugin
+autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr><C-o>
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
