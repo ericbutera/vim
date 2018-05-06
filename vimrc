@@ -45,6 +45,7 @@ filetype plugin indent on
 " use <Leader>b to change buffers
 " https://vi.stackexchange.com/a/2187
 nnoremap <Leader>b :ls<CR>:b<Space>
+nnoremap <Leader>P :CtrlPBuffer<CR>
 
 set nowrap
 set nu
