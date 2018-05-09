@@ -22,7 +22,8 @@ Plugin 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'sjl/gundo.vim'
+" Plugin 'sjl/gundo.vim'
+Plugin 'mbbill/undotree'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -34,6 +35,7 @@ Plugin 'python-mode/python-mode'
 Plugin 'yegappan/mru'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --omnisharp-completer' }
+Plugin 'mattn/emmet-vim'
 
 " web
 Plugin 'ap/vim-css-color'
@@ -79,8 +81,6 @@ map <C-l> <C-w>l
 
 let g:NERDTreeChDirMode = 2
 map <leader>n :NERDTreeToggle<CR>
-
-nmap <F8> :TagbarToggle<CR>
 
 map <leader>b :BuffergatorToggle<CR>
 map <leader>B :BuffergatorToggle<CR>
