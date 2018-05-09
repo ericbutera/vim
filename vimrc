@@ -36,6 +36,8 @@ Plugin 'yegappan/mru'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --omnisharp-completer' }
 Plugin 'mattn/emmet-vim'
+Plugin 'stephpy/vim-yaml'
+Plugin 'maksimr/vim-jsbeautify'
 
 " web
 Plugin 'ap/vim-css-color'
@@ -81,6 +83,7 @@ map <C-l> <C-w>l
 
 let g:NERDTreeChDirMode = 2
 map <leader>n :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['node_modules']
 
 map <leader>b :BuffergatorToggle<CR>
 map <leader>B :BuffergatorToggle<CR>
