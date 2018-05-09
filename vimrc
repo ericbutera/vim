@@ -97,6 +97,9 @@ let g:ycm_key_list_previous_completion = ['<C-TAB>', '<Up>']
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_python_binary_path = 'python3'
 
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 " make ack use silver searcher
 if executable('ag') 
     let g:ackprg = 'ag --vimgrep'
