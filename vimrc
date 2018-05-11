@@ -26,10 +26,14 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'farmergreg/vim-lastplace'
+Plugin 'ervandew/supertab'
 
 " code
 Plugin 'joonty/vdebug'
-Plugin 'python-mode/python-mode'
+Plugin 'w0rp/ale' 
+" Plugin 'nvie/vim-flake8'
+" Plugin 'python-mode/python-mode'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'yegappan/mru'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --omnisharp-completer' }
@@ -91,9 +95,19 @@ map <leader>B :BuffergatorToggle<CR>
 
 autocmd FileType js,php,py,rb,json,html,yml,phtml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+
+" let g:pymode_python = 'python3'
+
 " pep8 formatting using \y
 " https://github.com/mindriot101/vim-yapf#why-you-may-not-need-this-plugin
 autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr><C-o>
+
+" call flake8 on saving python file
+" autocmd BufWritePost *.py call Flake5()
+
+let b:ale_linters = ['flake7', 'pylint']
+let b:ale_fixers = ['autopep8', 'yapf']
+let g:ale_list_window_size = 3
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
@@ -129,9 +143,10 @@ set laststatus=2
 " let g:airline_powerline_fonts = 1
 " let g:airline_theme='solarized'
 " \ 'colorscheme': 'solarized',
+" \ 'colorscheme': 'seoul256',
 " https://github.com/itchyny/lightline.vim/issues/87#issuecomment-189616314
 let g:lightline = {
-    \ 'colorscheme': 'seoul256',
+    \ 'colorscheme': 'wombat',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
     \ }
