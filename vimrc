@@ -5,9 +5,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" colors light
+" colors 
+" Plugin 'chriskempson/base16-vim'
+Plugin 'sonph/onehalf'
 Plugin 'romainl/flattened' 
-" colors dark
 Plugin 'romainl/Apprentice'
 Plugin 'baskerville/bubblegum'
 
@@ -34,6 +35,9 @@ Plugin 'python-mode/python-mode'
 Plugin 'yegappan/mru'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --omnisharp-completer' }
+Plugin 'stephpy/vim-yaml'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'mxw/vim-jsx'
 
 " web
 Plugin 'ap/vim-css-color'
@@ -57,9 +61,11 @@ set softtabstop=0 noexpandtab
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 
-autocmd FileType html,htmldjango set ai sw=2 ts=2 sta et fo=croql
+autocmd FileType yaml,json set ai sw=2 ts=2 sta et fo=croql
+autocmd FileType js,py,php,html,htmldjango set ai sw=4 ts=4 sta et fo=croql
 
 let g:gutentags_cache_dir = '~/.vim/gutentags'
+let g:gutentags_ctags_exclude = ['*.css', '*.js']
 
 " put swap, backup and undo files in a special location
 " https://stackoverflow.com/a/15317146/261272
@@ -79,6 +85,7 @@ map <C-l> <C-w>l
 
 let g:NERDTreeChDirMode = 2
 map <leader>n :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['node_modules']
 
 nmap <F8> :TagbarToggle<CR>
 
@@ -106,20 +113,33 @@ if !has('gui_running')
     set t_Co=256
 endif
 
+" https://github.com/vim/vim/issues/2309#issuecomment-343288543
+" enable wide mouse support
+set mouse=a
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
+
 " status
 set laststatus=2
 " export TERM=xterm-256color
 
 " let g:airline_powerline_fonts = 1
 " let g:airline_theme='solarized'
-let g:lightline = { 
-            \ 'colorscheme': 'solarized',
-            \ }
-
+" \ 'colorscheme': 'solarized',
+" https://github.com/itchyny/lightline.vim/issues/87#issuecomment-189616314
+let g:lightline = {
+    \ 'colorscheme': 'seoul256',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
+    \ }
+    \ }
 " colorscheme bubblegum-256-dark
 " set background=dark
 
-colorscheme flattened_light
-set background=light
+colorscheme apprentice " bubblegum-256-dark
+set background=dark
 syntax enable
 
