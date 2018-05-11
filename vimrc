@@ -6,8 +6,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " colors 
-" Plugin 'chriskempson/base16-vim'
-Plugin 'sonph/onehalf'
 Plugin 'romainl/flattened' 
 Plugin 'romainl/Apprentice'
 Plugin 'baskerville/bubblegum'
@@ -23,7 +21,7 @@ Plugin 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'sjl/gundo.vim'
+Plugin 'mbbill/undotree'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -35,6 +33,7 @@ Plugin 'python-mode/python-mode'
 Plugin 'yegappan/mru'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --omnisharp-completer' }
+Plugin 'mattn/emmet-vim'
 Plugin 'stephpy/vim-yaml'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'mxw/vim-jsx'
@@ -87,8 +86,6 @@ let g:NERDTreeChDirMode = 2
 map <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['node_modules']
 
-nmap <F8> :TagbarToggle<CR>
-
 map <leader>b :BuffergatorToggle<CR>
 map <leader>B :BuffergatorToggle<CR>
 
@@ -103,6 +100,9 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 let g:ycm_key_list_previous_completion = ['<C-TAB>', '<Up>']
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_python_binary_path = 'python3'
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,js EmmetInstall
 
 " make ack use silver searcher
 if executable('ag') 
