@@ -49,6 +49,7 @@ Plugin 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
+filetype on
 
 " use <Leader>b to change buffers
 " https://vi.stackexchange.com/a/2187
