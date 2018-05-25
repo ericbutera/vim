@@ -29,6 +29,7 @@ Plugin 'farmergreg/vim-lastplace'
 Plugin 'ervandew/supertab'
 
 " code
+Plugin 'ambv/black'
 Plugin 'prettier/vim-prettier'
 Plugin 'joonty/vdebug'
 Plugin 'w0rp/ale' 
