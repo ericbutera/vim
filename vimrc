@@ -30,6 +30,8 @@ Plugin 'farmergreg/vim-lastplace'
 Plugin 'ervandew/supertab'
 
 " code
+Plugin 'ambv/black'
+Plugin 'prettier/vim-prettier'
 Plugin 'joonty/vdebug'
 Plugin 'w0rp/ale' 
 " Plugin 'nvie/vim-flake8'
@@ -161,20 +163,19 @@ end
 
 " let g:airline_powerline_fonts = 1
 " let g:airline_theme='solarized'
-" \ 'colorscheme': 'solarized',
-" \ 'colorscheme': 'seoul256',
+"
 " https://github.com/itchyny/lightline.vim/issues/87#issuecomment-189616314
     " \ 'colorscheme': 'wombat',
 let g:lightline = {
-    \ 'colorscheme': 'wombat',
+    \ 'colorscheme': 'solarized',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
     \ }
     \ }
-" colorscheme bubblegum-256-dark
-" set background=dark
 
-colorscheme apprentice " bubblegum-256-dark
-set background=dark
+colorscheme flattened_light
+set background=light
+"colorscheme apprentice " bubblegum-256-dark
+"set background=dark
 syntax enable
 
