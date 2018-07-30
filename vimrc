@@ -16,6 +16,7 @@ Plugin 'itchyny/lightline.vim'
 " Plugin 'vim-airline/vim-airline-themes'
 
 " various plugins
+Plugin 'dhruvasagar/vim-zoom'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -67,7 +68,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 
 autocmd FileType yaml,json set ai sw=2 ts=2 sta et fo=croql
-autocmd FileType js,py,php,html,htmldjango set ai sw=4 ts=4 sta et fo=croql
+autocmd FileType jsx,js,py,php,html,htmldjango set ai sw=4 ts=4 sta et fo=croql
 
 let g:jedi#popup_on_dot = 0
 let g:jedi#goto_command = "<Leader>D"
@@ -163,6 +164,7 @@ end
 " \ 'colorscheme': 'solarized',
 " \ 'colorscheme': 'seoul256',
 " https://github.com/itchyny/lightline.vim/issues/87#issuecomment-189616314
+    " \ 'colorscheme': 'wombat',
 let g:lightline = {
     \ 'colorscheme': 'wombat',
     \ 'active': {
